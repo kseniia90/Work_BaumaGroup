@@ -13,6 +13,9 @@ $blue: #015BBB;
 body.lock {
     overflow: hidden;
 }
+html, body {
+    height: 100%
+}
 body {
     @include font($font-light, 18px, 27px, $gray); 
     @media (max-width: $mobile) {
@@ -20,16 +23,18 @@ body {
         line-height: 25px;
     }
 }
-.main {
-    min-height: calc(100vh - 173px);
-    @media (max-width: $mobile) {
-        min-height: calc(100vh - 182px);
-    }
-  }
-  
 .wrapper {
     margin: 0 auto;
     overflow: hidden;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+header, footer {
+    width: 100%;
+}
+main {
+    flex: 1 1 auto;
 }
 .container {
     max-width: 1174px;
@@ -918,6 +923,7 @@ ol.breadcrumb li {
 }
 
 .footer {
+    flex: 0 0 auto;
     background-color: $gray;
     padding: 30px 0;
     @include font($font-light, 16px, normal, white); 
@@ -1092,7 +1098,6 @@ ol.breadcrumb li {
 }
 .search-result {
     margin: 48px auto;
-    // min-height: 600px;
     @media (max-width: $mobile) {
         margin: 25px auto 100px;
     }
@@ -1157,6 +1162,7 @@ ol.breadcrumb li {
     &__item {
         padding: 14px 20px;
         box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.10);
+        display: block;
         h3 {
             font-family: $font-medium;
             font-size: 18px;
@@ -1690,6 +1696,9 @@ ol.breadcrumb li {
                 height: 350px;
             }
         }         
+    }
+    strong {
+        color: #015bbb;
     }
 }
 .text_page {

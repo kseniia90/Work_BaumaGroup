@@ -102,6 +102,12 @@ $(function () {
       $(this).removeClass("gray");
     }
   })
+
+  //counting catalog items. if odd last item full width
+
+  if($(".catalog__item").length % 2 != 0) {
+    $(".catalog__item:last-child").addClass("full");
+  }
 });
 
 

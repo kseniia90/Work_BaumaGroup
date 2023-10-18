@@ -32,8 +32,10 @@ function dropDownFunc(dropDown) {
 
         // add the open and active class(Opening the DropDown)
         this.parentElement.classList.add("dropdown-open");
-        this.nextElementSibling.classList.add("dropdown-active");
-        document.querySelector(".back-btn").classList.add("_active");
+        // e.target.nextElementSibling.classList.add("dropdown-active");
+        setTimeout(function() {
+          e.target.nextElementSibling.classList.add("dropdown-active")
+        }, 200);
       }
     }
   }
@@ -42,8 +44,7 @@ function dropDownFunc(dropDown) {
 // Listen to the doc click
 window.addEventListener("click", function (e) {
   // Close the menu if click happen outside menu
-  if (e.target.closest(".header__menu__list") === null) {
-    document.querySelector(".back-btn").classList.remove("_active");
+  if (e.target.closest("#btn_mobile_menu_back")) {
     // Close the opend dropdown
     closeDropdown();
   }
